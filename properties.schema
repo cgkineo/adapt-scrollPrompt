@@ -1,0 +1,62 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "required":false,
+  "properties":{
+  	"pluginLocations": {
+  	  "type":"object",
+  	  "required":true,
+  	  "properties":{
+    		"config": {
+    		  "type":"object"
+    		},
+        "course": {
+          "type":"object",
+          "properties": {
+            "_scrollPrompt": {
+              "type": "object",
+              "legend": "Scroll Prompt",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "default": false,
+                  "title": "Is enabled",
+                  "help": "Apply scroll prompt to menu header. An icon to add visual aid for scrolling and auto scroll functionality.",
+                  "inputType": "Checkbox"
+                }
+              }
+            }
+          }
+        },
+    		"contentobject": {
+    		  "type":"object",
+          "properties": {
+            "_scrollPrompt": {
+              "type": "object",
+              "legend": "Scroll Prompt",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "default": false,
+                  "title": "Is enabled",
+                  "help": "Apply scroll prompt to page header. An icon to add visual aid for scrolling and auto scroll functionality.",
+                  "inputType": "Checkbox"
+                }
+              }
+            }
+          }
+    		},
+    		"article": {
+    		  "type":"object"
+    		},
+    		"block": {
+    		  "type":"object"
+    		},
+    		"component": {
+    		  "type":"object"
+    		}
+  	  }
+  	}
+  }
+}

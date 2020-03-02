@@ -1,0 +1,15 @@
+{
+  "name": "adapt-scrollPrompt",
+  "framework": ">=5",
+  "version": "1.0.0",
+  "displayName": "Scroll Prompt",
+  "extension": "scrollPrompt",
+  "targetAttribute": "_scrollPrompt",
+  "description": "Apply scroll prompt to course menu and page headers. An icon to add visual aid for scrolling as well as auto scroll functionality.",
+  "main": "/js/adapt-scrollPrompt.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-extension"
+  ],
+  "license": "GPLv3"
+}

@@ -1,0 +1,5 @@
+  // apply to course.json for menu header
+  // apply to contentObject.json for page header
+  "_scrollPrompt": {
+    "_isEnabled": true
+  }
