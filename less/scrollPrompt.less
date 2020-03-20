@@ -1,5 +1,18 @@
 .scrollPrompt {
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
   &__btn-icon .icon {
     .icon-controls-down;
+  }
+
+  &__instruction {
+    margin-left: 1rem;
+    .dir-rtl & {
+      margin-left: inherit;
+      margin-right: 1em;
+    }
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "adapt-scrollPrompt",
   "framework": ">=5",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Scroll Prompt",
   "extension": "scrollPrompt",
   "targetAttribute": "_scrollPrompt",

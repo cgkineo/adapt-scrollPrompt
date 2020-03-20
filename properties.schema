@@ -42,6 +42,14 @@
                   "title": "Is enabled",
                   "help": "Apply scroll prompt to page header. An icon to add visual aid for scrolling and auto scroll functionality.",
                   "inputType": "Checkbox"
+                },
+                "instruction": {
+                  "type": "string",
+                  "required": false,
+                  "title": "Instruction",
+                  "inputType": "Text",
+                  "validators": [],
+                  "translatable": true
                 }
               }
             }
