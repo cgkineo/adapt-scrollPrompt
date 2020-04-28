@@ -43,11 +43,14 @@ define(function(require) {
 	});
 
 	Adapt.on('app:dataReady', function() {
-		if (!Adapt.course.get("_scrollPrompt")) return;
 
 		Adapt.on('menuView:ready pageView:ready', function(view) {
 
 			var model = view.model;
+
+			var scrollPrompt = model.get('_scrollPrompt');
+			if (!scrollPrompt || !scrollPrompt._isEnabled) return;
+
 			var modelType;
 
 			switch (model.get("_type")) {
