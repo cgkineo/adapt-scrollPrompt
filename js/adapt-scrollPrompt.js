@@ -37,6 +37,9 @@ define(function(require) {
 				Adapt.scrollTo('.js-children', { duration: 800 });
 			} else if (type === 'page'){
 				Adapt.scrollTo('.article', { duration: 800 });
+			} else if (type === 'component'){
+				var $nextBlock = this.$el.parents('.block').next();
+				Adapt.scrollTo($nextBlock, { duration: 800 });
 			}
 		}
 
@@ -44,7 +47,7 @@ define(function(require) {
 
 	Adapt.on('app:dataReady', function() {
 
-		Adapt.on('menuView:ready pageView:ready', function(view) {
+		Adapt.on('menuView:ready pageView:ready componentView:postRender', function(view) {
 
 			var model = view.model;
 
@@ -59,6 +62,10 @@ define(function(require) {
 					break;
 				case "course":
 					modelType = "menu";
+					break;
+				case "component":
+					modelType = "component";
+					break;
 			}
 			/* set model type selector to append scroll prompt */
 			var modelTypeSelector = '.' + modelType + '__header-inner';
