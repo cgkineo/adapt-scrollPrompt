@@ -42,6 +42,6 @@ define([
 
   });
 
-  return ScrollPromptView
+  return ScrollPromptView;
 
 });
