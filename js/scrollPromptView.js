@@ -35,7 +35,7 @@ define([
       /* set scroll to selector depending on model type */
       if (type === 'course') {
         Adapt.scrollTo('.js-children', { duration: 800 });
-      } else if (type === 'page'){
+      } else if (type === 'page') {
         Adapt.scrollTo('.article', { duration: 800 });
       }
     }
