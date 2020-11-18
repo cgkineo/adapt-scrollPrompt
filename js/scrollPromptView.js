@@ -31,12 +31,18 @@ define([
     },
 
     onScrollPromptClick: function(event) {
-      var type = this.model.get('_type');
       /* set scroll to selector depending on model type */
-      if (type === 'course') {
-        Adapt.scrollTo('.js-children', { duration: 800 });
-      } else if (type === 'page') {
-        Adapt.scrollTo('.article', { duration: 800 });
+      switch (this.model.get('_type')) {
+        case 'course':
+          Adapt.scrollTo('.js-children', { duration: 800 });
+          break;
+        case 'page':
+          Adapt.scrollTo('.article', { duration: 800 });
+          break;
+        case 'component':
+          var $nextBlock = this.$el.parents('.block').next();
+          Adapt.scrollTo($nextBlock, { duration: 800 });
+          break;
       }
     }
 
