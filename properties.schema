@@ -4,13 +4,13 @@
   "id": "http://jsonschema.net",
   "required":false,
   "properties":{
-  	"pluginLocations": {
-  	  "type":"object",
-  	  "required":true,
-  	  "properties":{
-    		"config": {
-    		  "type":"object"
-    		},
+    "pluginLocations": {
+      "type":"object",
+      "required":true,
+      "properties":{
+        "config": {
+          "type":"object"
+        },
         "course": {
           "type":"object",
           "properties": {
@@ -24,13 +24,21 @@
                   "title": "Is enabled",
                   "help": "Apply scroll prompt to menu header. An icon to add visual aid for scrolling and auto scroll functionality.",
                   "inputType": "Checkbox"
+                },
+                "instruction": {
+                  "type": "string",
+                  "required": false,
+                  "title": "Instruction",
+                  "inputType": "Text",
+                  "validators": [],
+                  "translatable": true
                 }
               }
             }
           }
         },
-    		"contentobject": {
-    		  "type":"object",
+        "contentobject": {
+        "type":"object",
           "properties": {
             "_scrollPrompt": {
               "type": "object",
@@ -54,17 +62,17 @@
               }
             }
           }
-    		},
-    		"article": {
-    		  "type":"object"
-    		},
-    		"block": {
-    		  "type":"object"
-    		},
-    		"component": {
-    		  "type":"object"
-    		}
-  	  }
-  	}
+        },
+        "article": {
+          "type":"object"
+        },
+        "block": {
+          "type":"object"
+        },
+        "component": {
+          "type":"object"
+        }
+      }
+    }
   }
 }
