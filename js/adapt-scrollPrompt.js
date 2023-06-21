@@ -1,33 +1,30 @@
-define([
-  'core/js/adapt',
-  './scrollPromptView'
-], function(Adapt, ScrollPromptView) {
+import Adapt from 'core/js/adapt';
+import ScrollPromptView from './ScrollPromptView';
 
-  Adapt.on('menuView:ready pageView:ready componentView:postRender', function(view) {
+class ScrollPrompt extends Backbone.Controller {
 
+  initialize() {
+    this.listenTo(Adapt, {
+      'menuView:ready pageView:ready componentView:postRender': this.setupView
+    });
+  }
+
+  setupView(view) {
     const model = view.model;
 
     const scrollPrompt = model.get('_scrollPrompt');
     if (!scrollPrompt || !scrollPrompt._isEnabled) return;
 
-    let modelTypeSelector;
+    // model.set('scrollInstruction', scrollPrompt.instruction || '');
 
-    switch (model.get('_type')) {
-      case 'page':
-        modelTypeSelector = '.page__header-inner';
-        break;
-      case 'course':
-        modelTypeSelector = '.menu__header-inner';
-        break;
-      case 'component':
-        modelTypeSelector = '.component__inner';
-        break;
-    }
+    const modelType = model.get('_type');
+    const selector = modelType === 'component' ? '.component__inner' : `.${modelType}__header-inner`;
 
     new ScrollPromptView({
       model
-    }).$el.appendTo(view.$(modelTypeSelector));
+    }).$el.appendTo(view.$el.find(selector));
+  }
 
-  });
+};
 
-});
+export default new ScrollPrompt();

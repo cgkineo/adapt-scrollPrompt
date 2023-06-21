@@ -1,53 +1,50 @@
-define([
-  'core/js/adapt',
-  'core/js/router'
-], function(Adapt, router) {
+import Adapt from 'core/js/adapt';
+import Router from 'core/js/router';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { templates } from 'core/js/reactHelpers';
 
-  const ScrollPromptView = Backbone.View.extend({
+export default class ScrollPromptView extends Backbone.View {
 
-    className: 'scrollPrompt',
+  className() { return 'scrollPrompt'; }
 
-    events: {
-      'click .js-scrollPrompt-btn': 'onScrollPromptClick'
-    },
+  initialize() {
+    const scrollPrompt = this.model.get('_scrollPrompt');
+    if (!scrollPrompt || !scrollPrompt._isEnabled) return;
 
-    initialize: function() {
-      const scrollPrompt = this.model.get('_scrollPrompt');
-      if (!scrollPrompt || !scrollPrompt._isEnabled) return;
+    this.onScrollPromptClick = this.onScrollPromptClick.bind(this);
 
-      this.render();
-    },
+    this.render();
+  }
 
-    render: function() {
-      const data = this.model.toJSON();
-      const template = Handlebars.templates.scrollPrompt;
+  render() {
+    const data = {
+      ...this,
+      model: this.model.toJSON(),
+      _scrollPrompt: this.model.get('_scrollPrompt')
+    };
+    ReactDOM.render(<templates.scrollPrompt {...data} />, this.el);
 
-      this.$el.html(template(data));
+    _.defer(this.postRender.bind(this));
+  }
 
-      _.defer(this.postRender.bind(this));
-    },
+  postRender() {
+    this.listenTo(Adapt, 'remove', this.remove);
+  }
 
-    postRender: function() {
-      this.listenTo(Adapt, 'remove', this.remove);
-    },
-
-    onScrollPromptClick: function(e) {
-      // Set scroll to selector depending on model type
-      switch (this.model.get('_type')) {
-        case 'course':
-          router.navigateToElement('.js-children', { duration: 800 });
-          break;
-        case 'page':
-          router.navigateToElement('.article', { duration: 800 });
-          break;
-        case 'component':
-          this.$nextBlock = this.$el.parents('.block').next();
-          router.navigateToElement(this.$nextBlock, { duration: 800 });
-          break;
-      }
+  onScrollPromptClick(e) {
+    // Set scroll to selector depending on model type
+    switch (this.model.get('_type')) {
+      case 'course':
+        Router.navigateToElement('.js-children', { duration: 800 });
+        break;
+      case 'page':
+        Router.navigateToElement('.article', { duration: 800 });
+        break;
+      case 'component':
+        this.$nextBlock = this.$el.parents('.block').next();
+        Router.navigateToElement(this.$nextBlock, { duration: 800 });
     }
+  }
 
-  });
-
-  return ScrollPromptView;
-});
+};
