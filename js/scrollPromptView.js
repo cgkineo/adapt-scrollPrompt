@@ -38,9 +38,9 @@ export default class ScrollPromptView extends Backbone.View {
     const nextEl = {
       course: '.js-children',
       page: '.article',
+      block: this.$el.parents('.block').next(),
       component: this.$el.parents('.block').next()
     };
-
     Router.navigateToElement(nextEl[type], { duration: 800 });
   }
 

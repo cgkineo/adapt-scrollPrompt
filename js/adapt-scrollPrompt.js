@@ -5,7 +5,7 @@ class ScrollPrompt extends Backbone.Controller {
 
   initialize() {
     this.listenTo(Adapt, {
-      'menuView:ready pageView:ready componentView:postRender': this.setupView
+      'menuView:ready pageView:ready blockView:postRender componentView:postRender': this.setupView
     });
   }
 
