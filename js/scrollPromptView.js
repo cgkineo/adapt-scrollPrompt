@@ -1,8 +1,9 @@
 define([
-  'core/js/adapt'
-], function(Adapt) {
+  'core/js/adapt',
+  'core/js/router'
+], function(Adapt, router) {
 
-  var ScrollPromptView = Backbone.View.extend({
+  const ScrollPromptView = Backbone.View.extend({
 
     className: 'scrollPrompt',
 
@@ -11,15 +12,15 @@ define([
     },
 
     initialize: function() {
-      var scrollPrompt = this.model.get('_scrollPrompt');
+      const scrollPrompt = this.model.get('_scrollPrompt');
       if (!scrollPrompt || !scrollPrompt._isEnabled) return;
 
       this.render();
     },
 
     render: function() {
-      var data = this.model.toJSON();
-      var template = Handlebars.templates.scrollPrompt;
+      const data = this.model.toJSON();
+      const template = Handlebars.templates.scrollPrompt;
 
       this.$el.html(template(data));
 
@@ -30,18 +31,18 @@ define([
       this.listenTo(Adapt, 'remove', this.remove);
     },
 
-    onScrollPromptClick: function(event) {
-      /* set scroll to selector depending on model type */
+    onScrollPromptClick: function(e) {
+      // Set scroll to selector depending on model type
       switch (this.model.get('_type')) {
         case 'course':
-          Adapt.scrollTo('.js-children', { duration: 800 });
+          router.navigateToElement('.js-children', { duration: 800 });
           break;
         case 'page':
-          Adapt.scrollTo('.article', { duration: 800 });
+          router.navigateToElement('.article', { duration: 800 });
           break;
         case 'component':
-          var $nextBlock = this.$el.parents('.block').next();
-          Adapt.scrollTo($nextBlock, { duration: 800 });
+          this.$nextBlock = this.$el.parents('.block').next();
+          router.navigateToElement(this.$nextBlock, { duration: 800 });
           break;
       }
     }
@@ -49,5 +50,4 @@ define([
   });
 
   return ScrollPromptView;
-
 });

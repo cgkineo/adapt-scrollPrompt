@@ -5,30 +5,30 @@ define([
 
   Adapt.on('menuView:ready pageView:ready componentView:postRender', function(view) {
 
-    var model = view.model;
+    const model = view.model;
 
-    var scrollPrompt = model.get('_scrollPrompt');
+    const scrollPrompt = model.get('_scrollPrompt');
     if (!scrollPrompt || !scrollPrompt._isEnabled) return;
 
-    var modelType;
+    let modelType;
 
-    switch (model.get("_type")) {
-      case "page":
-        modelType = "page";
+    switch (model.get('_type')) {
+      case 'page':
+        modelType = 'page';
         break;
-      case "course":
-        modelType = "menu";
+      case 'course':
+        modelType = 'menu';
         break;
-      case "component":
-        modelType = "component";
+      case 'component':
+        modelType = 'component';
         break;
     }
 
-    /* set model type selector to append scroll prompt to */
-    var modelTypeSelector = '.' + modelType + '__header-inner';
+    // Set model type selector to append scroll prompt to
+    const modelTypeSelector = '.' + modelType + '__header-inner';
 
     new ScrollPromptView({
-      model: model
+      model
     }).$el.appendTo(view.$(modelTypeSelector));
 
   });
