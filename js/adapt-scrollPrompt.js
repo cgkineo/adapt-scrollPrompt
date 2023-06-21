@@ -10,22 +10,19 @@ define([
     const scrollPrompt = model.get('_scrollPrompt');
     if (!scrollPrompt || !scrollPrompt._isEnabled) return;
 
-    let modelType;
+    let modelTypeSelector;
 
     switch (model.get('_type')) {
       case 'page':
-        modelType = 'page';
+        modelTypeSelector = '.page__header-inner';
         break;
       case 'course':
-        modelType = 'menu';
+        modelTypeSelector = '.menu__header-inner';
         break;
       case 'component':
-        modelType = 'component';
+        modelTypeSelector = '.component__inner';
         break;
     }
-
-    // Set model type selector to append scroll prompt to
-    const modelTypeSelector = '.' + modelType + '__header-inner';
 
     new ScrollPromptView({
       model
