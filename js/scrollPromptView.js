@@ -33,18 +33,15 @@ export default class ScrollPromptView extends Backbone.View {
   }
 
   onScrollPromptClick(e) {
-    // Set scroll to selector depending on model type
-    switch (this.model.get('_type')) {
-      case 'course':
-        Router.navigateToElement('.js-children', { duration: 800 });
-        break;
-      case 'page':
-        Router.navigateToElement('.article', { duration: 800 });
-        break;
-      case 'component':
-        this.$nextBlock = this.$el.parents('.block').next();
-        Router.navigateToElement(this.$nextBlock, { duration: 800 });
-    }
+    // Set scroll to selector based on model type
+    const type = this.model.get('_type');
+    const nextEl = {
+      course: '.js-children',
+      page: '.article',
+      component: this.$el.parents('.block').next()
+    };
+
+    Router.navigateToElement(nextEl[type], { duration: 800 });
   }
 
 };
