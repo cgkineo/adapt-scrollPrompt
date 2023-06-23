@@ -12,7 +12,7 @@
     "adapt-extension"
   ],
   "license": "GPLv3",
-  "private": false,
+  "private": true,
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/git": "^10.0.1",
