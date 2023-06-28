@@ -1,5 +1,5 @@
-  // apply to course.json for menu header
-  // apply to contentObject.json for page header
+  // Apply to course.json, contentObject.json, blocks.json or components.json
+  
   "_scrollPrompt": {
     "_isEnabled": true,
     "instruction": "Scroll down"

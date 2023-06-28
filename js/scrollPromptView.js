@@ -1,47 +1,47 @@
-define([
-  'core/js/adapt'
-], function(Adapt) {
+import Adapt from 'core/js/adapt';
+import Router from 'core/js/router';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { templates } from 'core/js/reactHelpers';
 
-  var ScrollPromptView = Backbone.View.extend({
+export default class ScrollPromptView extends Backbone.View {
 
-    className: 'scrollPrompt',
+  className() { return 'scrollPrompt'; }
 
-    events: {
-      'click .js-scrollPrompt-btn': 'onScrollPromptClick'
-    },
+  initialize() {
+    const scrollPrompt = this.model.get('_scrollPrompt');
+    if (!scrollPrompt || !scrollPrompt._isEnabled) return;
 
-    initialize: function() {
-      var scrollPrompt = this.model.get('_scrollPrompt');
-      if (!scrollPrompt || !scrollPrompt._isEnabled) return;
+    this.onScrollPromptClick = this.onScrollPromptClick.bind(this);
 
-      this.render();
-    },
+    this.render();
+  }
 
-    render: function() {
-      var data = this.model.toJSON();
-      var template = Handlebars.templates.scrollPrompt;
+  render() {
+    const data = {
+      ...this,
+      model: this.model.toJSON(),
+      _scrollPrompt: this.model.get('_scrollPrompt')
+    };
+    ReactDOM.render(<templates.scrollPrompt {...data} />, this.el);
 
-      this.$el.html(template(data));
+    _.defer(this.postRender.bind(this));
+  }
 
-      _.defer(this.postRender.bind(this));
-    },
+  postRender() {
+    this.listenTo(Adapt, 'remove', this.remove);
+  }
 
-    postRender: function() {
-      this.listenTo(Adapt, 'remove', this.remove);
-    },
+  onScrollPromptClick(e) {
+    // Set scroll to selector based on model type
+    const type = this.model.get('_type');
+    const nextEl = {
+      course: '.js-children',
+      page: '.article',
+      block: this.$el.parents('.block').next(),
+      component: this.$el.parents('.block').next()
+    };
+    Router.navigateToElement(nextEl[type], { duration: 800 });
+  }
 
-    onScrollPromptClick: function(event) {
-      var type = this.model.get('_type');
-      /* set scroll to selector depending on model type */
-      if (type === 'course') {
-        Adapt.scrollTo('.js-children', { duration: 800 });
-      } else if (type === 'page') {
-        Adapt.scrollTo('.article', { duration: 800 });
-      }
-    }
-
-  });
-
-  return ScrollPromptView;
-
-});
+};
