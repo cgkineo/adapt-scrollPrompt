@@ -10,9 +10,7 @@ export default function ScrollPrompt (props) {
   return (
     <div className="scrollPrompt__inner a11y-ignore" aria-hidden="true">
       <button className="btn-icon scrollPrompt__button" onClick={onScrollPromptClick}>
-        <div className="scrollPrompt__btn-icon">
-          <div className="icon" />
-        </div>
+        <div className="icon" />
       </button>
 
       {_scrollPrompt.instruction &&
