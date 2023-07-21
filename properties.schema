@@ -74,7 +74,7 @@
                   "type": "boolean",
                   "default": false,
                   "title": "Is enabled",
-                  "help": "Apply scroll prompt to block. An icon to add visual aid for scrolling and auto scroll functionality.",
+                  "help": "Apply scroll prompt to this block. An icon to add visual aid for scrolling and auto scroll functionality.",
                   "inputType": "Checkbox"
                 },
                 "instruction": {
@@ -100,7 +100,7 @@
                   "type": "boolean",
                   "default": false,
                   "title": "Is enabled",
-                  "help": "Apply scroll prompt to component. An icon to add visual aid for scrolling and auto scroll functionality.",
+                  "help": "Apply scroll prompt to this component. An icon to add visual aid for scrolling and auto scroll functionality.",
                   "inputType": "Checkbox"
                 },
                 "instruction": {
