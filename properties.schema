@@ -38,7 +38,7 @@
           }
         },
         "contentobject": {
-        "type":"object",
+          "type":"object",
           "properties": {
             "_scrollPrompt": {
               "type": "object",
@@ -63,14 +63,57 @@
             }
           }
         },
-        "article": {
-          "type":"object"
-        },
         "block": {
-          "type":"object"
+          "type":"object",
+          "properties": {
+            "_scrollPrompt": {
+              "type": "object",
+              "legend": "Scroll Prompt",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "default": false,
+                  "title": "Is enabled",
+                  "help": "Apply scroll prompt to block. An icon to add visual aid for scrolling and auto scroll functionality.",
+                  "inputType": "Checkbox"
+                },
+                "instruction": {
+                  "type": "string",
+                  "required": false,
+                  "title": "Instruction",
+                  "inputType": "Text",
+                  "validators": [],
+                  "translatable": true
+                }
+              }
+            }
+          }
         },
         "component": {
-          "type":"object"
+          "type":"object",
+          "properties": {
+            "_scrollPrompt": {
+              "type": "object",
+              "legend": "Scroll Prompt",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "default": false,
+                  "title": "Is enabled",
+                  "help": "Apply scroll prompt to component. An icon to add visual aid for scrolling and auto scroll functionality.",
+                  "inputType": "Checkbox"
+                },
+                "instruction": {
+                  "type": "string",
+                  "required": false,
+                  "title": "Instruction",
+                  "inputType": "Text",
+                  "validators": [],
+                  "translatable": true
+                }
+              }
+            }
+          }
         }
       }
     }
