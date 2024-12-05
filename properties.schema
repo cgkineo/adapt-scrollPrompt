@@ -2,7 +2,7 @@
   "type": "object",
   "$schema": "http://json-schema.org/draft-04/schema",
   "id": "http://jsonschema.net",
-  "required":false,
+  "required": false,
   "globals": {
     "scrollDown": {
       "type": "string",
@@ -13,11 +13,11 @@
       "translatable": true
     }
   },
-  "properties":{
+  "properties": {
     "pluginLocations": {
       "type": "object",
       "required": true,
-      "properties":{
+      "properties": {
         "config": {
           "type": "object"
         },
@@ -32,7 +32,7 @@
                   "type": "boolean",
                   "default": false,
                   "title": "Is enabled",
-                  "help": "Apply scroll prompt to menu header. An icon to add visual aid for scrolling and auto scroll functionality.",
+                  "help": "Apply scroll prompt to menu header. Used as a visual aid for scrolling and auto scroll functionality.",
                   "inputType": "Checkbox"
                 },
                 "instruction": {
@@ -58,7 +58,7 @@
                   "type": "boolean",
                   "default": false,
                   "title": "Is enabled",
-                  "help": "Apply scroll prompt to page header. An icon to add visual aid for scrolling and auto scroll functionality.",
+                  "help": "Apply scroll prompt to page header. Used as a visual aid for scrolling and auto scroll functionality.",
                   "inputType": "Checkbox"
                 },
                 "instruction": {
@@ -84,7 +84,7 @@
                   "type": "boolean",
                   "default": false,
                   "title": "Is enabled",
-                  "help": "Apply scroll prompt to this block. An icon to add visual aid for scrolling and auto scroll functionality.",
+                  "help": "Apply scroll prompt to this block. Used as a visual aid for scrolling and auto scroll functionality.",
                   "inputType": "Checkbox"
                 },
                 "instruction": {
@@ -110,7 +110,7 @@
                   "type": "boolean",
                   "default": false,
                   "title": "Is enabled",
-                  "help": "Apply scroll prompt to this component. An icon to add visual aid for scrolling and auto scroll functionality.",
+                  "help": "Apply scroll prompt to this component. Used as a visual aid for scrolling and auto scroll functionality.",
                   "inputType": "Checkbox"
                 },
                 "instruction": {

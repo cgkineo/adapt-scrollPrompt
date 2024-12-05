@@ -24,7 +24,7 @@
                     "scrollDown": {
                       "type": "string",
                       "title": "Instruction text",
-                      "default": "{{_globals._extensions._scrollPrompt.scrollDown}}",
+                      "default": "Scroll down",
                       "_adapt": {
                         "translatable": true
                       }
