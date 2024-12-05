@@ -1,0 +1,60 @@
+{
+  "$anchor": "scrollPrompt-course",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$patch": {
+    "source": {
+      "$ref": "course"
+    },
+    "with": {
+      "properties": {
+        "_globals": {
+          "type": "object",
+          "default": {},
+          "properties": {
+            "_extensions": {
+              "type": "object",
+              "default": {},
+              "properties": {
+                "_scrollPrompt": {
+                  "type": "object",
+                  "title": "Scroll Prompt",
+                  "default": {},
+                  "properties": {
+                    "scrollDown": {
+                      "type": "string",
+                      "title": "Instruction text",
+                      "default": "{{_globals._extensions._scrollPrompt.scrollDown}}",
+                      "_adapt": {
+                        "translatable": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "_scrollPrompt": {
+          "type": "object",
+          "title": "Scroll Prompt",
+          "default": {},
+          "required": [],
+          "properties": {
+            "_isEnabled": {
+              "type": "boolean",
+              "title": "Enable Scroll Prompt button",
+              "description": "Apply scroll prompt button to the menu header. Used as a visual aid for scrolling and auto scroll functionality.",
+              "default": false
+            },
+            "instruction": {
+              "type": "string",
+              "title": "Instruction text",
+              "default": "{{_globals._extensions._scrollPrompt.scrollDown}}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

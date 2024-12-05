@@ -16,7 +16,7 @@
   "properties":{
     "pluginLocations": {
       "type": "object",
-      "required":true,
+      "required": true,
       "properties":{
         "config": {
           "type": "object"
