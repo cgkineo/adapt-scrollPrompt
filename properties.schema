@@ -2,11 +2,9 @@
   "type": "object",
   "$schema": "http://json-schema.org/draft-04/schema",
   "id": "http://jsonschema.net",
-  "required": false,
   "globals": {
     "scrollDown": {
       "type": "string",
-      "required": true,
       "default": "Scroll down",
       "inputType": "Text",
       "validators": [],
@@ -16,11 +14,7 @@
   "properties": {
     "pluginLocations": {
       "type": "object",
-      "required": true,
       "properties": {
-        "config": {
-          "type": "object"
-        },
         "course": {
           "type": "object",
           "properties": {
@@ -37,7 +31,6 @@
                 },
                 "instruction": {
                   "type": "string",
-                  "required": false,
                   "title": "Instruction",
                   "inputType": "Text",
                   "validators": [],
@@ -63,7 +56,6 @@
                 },
                 "instruction": {
                   "type": "string",
-                  "required": false,
                   "title": "Instruction",
                   "inputType": "Text",
                   "validators": [],
@@ -89,7 +81,6 @@
                 },
                 "instruction": {
                   "type": "string",
-                  "required": false,
                   "title": "Instruction",
                   "inputType": "Text",
                   "validators": [],
@@ -115,7 +106,6 @@
                 },
                 "instruction": {
                   "type": "string",
-                  "required": false,
                   "title": "Instruction",
                   "inputType": "Text",
                   "validators": [],
