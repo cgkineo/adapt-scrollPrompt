@@ -1,18 +1,28 @@
 {
-  "type":"object",
+  "type": "object",
   "$schema": "http://json-schema.org/draft-04/schema",
   "id": "http://jsonschema.net",
   "required":false,
+  "globals": {
+    "scrollDown": {
+      "type": "string",
+      "required": true,
+      "default": "Scroll down",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
   "properties":{
     "pluginLocations": {
-      "type":"object",
+      "type": "object",
       "required":true,
       "properties":{
         "config": {
-          "type":"object"
+          "type": "object"
         },
         "course": {
-          "type":"object",
+          "type": "object",
           "properties": {
             "_scrollPrompt": {
               "type": "object",
@@ -38,7 +48,7 @@
           }
         },
         "contentobject": {
-          "type":"object",
+          "type": "object",
           "properties": {
             "_scrollPrompt": {
               "type": "object",
@@ -64,7 +74,7 @@
           }
         },
         "block": {
-          "type":"object",
+          "type": "object",
           "properties": {
             "_scrollPrompt": {
               "type": "object",
@@ -90,7 +100,7 @@
           }
         },
         "component": {
-          "type":"object",
+          "type": "object",
           "properties": {
             "_scrollPrompt": {
               "type": "object",

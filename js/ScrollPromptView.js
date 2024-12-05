@@ -18,10 +18,11 @@ export default class ScrollPromptView extends Backbone.View {
   }
 
   render() {
+    const _scrollPrompt = this.model.get('_scrollPrompt');
     const data = {
       ...this,
       model: this.model.toJSON(),
-      _scrollPrompt: this.model.get('_scrollPrompt')
+      _scrollPrompt
     };
     ReactDOM.render(<templates.scrollPrompt {...data} />, this.el);
 
