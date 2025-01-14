@@ -1,18 +1,22 @@
 {
-  "type":"object",
+  "type": "object",
   "$schema": "http://json-schema.org/draft-04/schema",
   "id": "http://jsonschema.net",
-  "required":false,
-  "properties":{
+  "globals": {
+    "scrollDown": {
+      "type": "string",
+      "default": "Scroll down",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
     "pluginLocations": {
-      "type":"object",
-      "required":true,
-      "properties":{
-        "config": {
-          "type":"object"
-        },
+      "type": "object",
+      "properties": {
         "course": {
-          "type":"object",
+          "type": "object",
           "properties": {
             "_scrollPrompt": {
               "type": "object",
@@ -22,12 +26,11 @@
                   "type": "boolean",
                   "default": false,
                   "title": "Is enabled",
-                  "help": "Apply scroll prompt to menu header. An icon to add visual aid for scrolling and auto scroll functionality.",
+                  "help": "Apply scroll prompt to menu header. Used as a visual aid for scrolling and auto scroll functionality.",
                   "inputType": "Checkbox"
                 },
                 "instruction": {
                   "type": "string",
-                  "required": false,
                   "title": "Instruction",
                   "inputType": "Text",
                   "validators": [],
@@ -38,7 +41,7 @@
           }
         },
         "contentobject": {
-          "type":"object",
+          "type": "object",
           "properties": {
             "_scrollPrompt": {
               "type": "object",
@@ -48,12 +51,11 @@
                   "type": "boolean",
                   "default": false,
                   "title": "Is enabled",
-                  "help": "Apply scroll prompt to page header. An icon to add visual aid for scrolling and auto scroll functionality.",
+                  "help": "Apply scroll prompt to page header. Used as a visual aid for scrolling and auto scroll functionality.",
                   "inputType": "Checkbox"
                 },
                 "instruction": {
                   "type": "string",
-                  "required": false,
                   "title": "Instruction",
                   "inputType": "Text",
                   "validators": [],
@@ -64,7 +66,7 @@
           }
         },
         "block": {
-          "type":"object",
+          "type": "object",
           "properties": {
             "_scrollPrompt": {
               "type": "object",
@@ -74,12 +76,11 @@
                   "type": "boolean",
                   "default": false,
                   "title": "Is enabled",
-                  "help": "Apply scroll prompt to this block. An icon to add visual aid for scrolling and auto scroll functionality.",
+                  "help": "Apply scroll prompt to this block. Used as a visual aid for scrolling and auto scroll functionality.",
                   "inputType": "Checkbox"
                 },
                 "instruction": {
                   "type": "string",
-                  "required": false,
                   "title": "Instruction",
                   "inputType": "Text",
                   "validators": [],
@@ -90,7 +91,7 @@
           }
         },
         "component": {
-          "type":"object",
+          "type": "object",
           "properties": {
             "_scrollPrompt": {
               "type": "object",
@@ -100,12 +101,11 @@
                   "type": "boolean",
                   "default": false,
                   "title": "Is enabled",
-                  "help": "Apply scroll prompt to this component. An icon to add visual aid for scrolling and auto scroll functionality.",
+                  "help": "Apply scroll prompt to this component. Used as a visual aid for scrolling and auto scroll functionality.",
                   "inputType": "Checkbox"
                 },
                 "instruction": {
                   "type": "string",
-                  "required": false,
                   "title": "Instruction",
                   "inputType": "Text",
                   "validators": [],

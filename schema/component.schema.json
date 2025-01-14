@@ -1,0 +1,33 @@
+{
+  "$anchor": "scrollPrompt-component",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$patch": {
+    "source": {
+      "$ref": "component"
+    },
+    "with": {
+      "properties": {
+        "_scrollPrompt": {
+          "type": "object",
+          "title": "Scroll Prompt",
+          "default": {},
+          "required": [],
+          "properties": {
+            "_isEnabled": {
+              "type": "boolean",
+              "title": "Enable Scroll Prompt button",
+              "description": "Apply scroll prompt button to the component. Used as a visual aid for scrolling and auto scroll functionality.",
+              "default": false
+            },
+            "instruction": {
+              "type": "string",
+              "title": "Instruction text",
+              "default": "{{_globals._extensions._scrollPrompt.scrollDown}}"
+            }
+          }
+        }
+      }
+    }
+  }
+}
