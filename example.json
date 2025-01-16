@@ -1,6 +1,7 @@
   // Apply to course.json, contentObject.json, blocks.json or components.json
-  
+
   "_scrollPrompt": {
     "_isEnabled": true,
-    "instruction": "{{_globals._extensions._scrollPrompt.scrollDown}}"
+    "instruction": "{{_globals._extensions._scrollPrompt.scrollDown}}",
+    "_iconClass": "icon-controls-down"
   }

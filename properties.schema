@@ -35,6 +35,15 @@
                   "inputType": "Text",
                   "validators": [],
                   "translatable": true
+                },
+                "_iconClass": {
+                  "type": "string",
+                  "required": false,
+                  "default": "icon-controls-down",
+                  "title": "Button icon class",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "CSS class name to be applied to the scroll prompt button icon."
                 }
               }
             }
@@ -60,6 +69,15 @@
                   "inputType": "Text",
                   "validators": [],
                   "translatable": true
+                },
+                "_iconClass": {
+                  "type": "string",
+                  "required": false,
+                  "default": "icon-controls-down",
+                  "title": "Button icon class",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "CSS class name to be applied to the scroll prompt button icon."
                 }
               }
             }
@@ -85,6 +103,15 @@
                   "inputType": "Text",
                   "validators": [],
                   "translatable": true
+                },
+                "_iconClass": {
+                  "type": "string",
+                  "required": false,
+                  "default": "icon-controls-down",
+                  "title": "Button icon class",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "CSS class name to be applied to the scroll prompt button icon."
                 }
               }
             }
@@ -110,6 +137,15 @@
                   "inputType": "Text",
                   "validators": [],
                   "translatable": true
+                },
+                "_iconClass": {
+                  "type": "string",
+                  "required": false,
+                  "default": "icon-controls-down",
+                  "title": "Button icon class",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "CSS class name to be applied to the scroll prompt button icon."
                 }
               }
             }

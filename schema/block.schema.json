@@ -24,6 +24,12 @@
               "type": "string",
               "title": "Instruction text",
               "default": "{{_globals._extensions._scrollPrompt.scrollDown}}"
+            },
+            "_iconClass": {
+              "type": "string",
+              "title": "Button icon class",
+              "description": "CSS class name to be applied to the scroll prompt button icon.",
+              "default": "icon-controls-down"
             }
           }
         }
