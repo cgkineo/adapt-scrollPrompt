@@ -39,7 +39,7 @@
                 "_buttonPosition": {
                   "type": "string",
                   "required": true,
-                  "enum": ["left", "top", "right", "bottom"],
+                  "enum": ["left", "right", "top", "bottom"],
                   "default": "left",
                   "title": "Button position",
                   "inputType": {
@@ -86,7 +86,7 @@
                 "_buttonPosition": {
                   "type": "string",
                   "required": true,
-                  "enum": ["left", "top", "right", "bottom"],
+                  "enum": ["left", "right", "top", "bottom"],
                   "default": "left",
                   "title": "Button position",
                   "inputType": {
@@ -133,7 +133,7 @@
                 "_buttonPosition": {
                   "type": "string",
                   "required": true,
-                  "enum": ["left", "top", "right", "bottom"],
+                  "enum": ["left", "right", "top", "bottom"],
                   "default": "left",
                   "title": "Button position",
                   "inputType": {
@@ -180,7 +180,7 @@
                 "_buttonPosition": {
                   "type": "string",
                   "required": true,
-                  "enum": ["left", "top", "right", "bottom"],
+                  "enum": ["left", "right", "top", "bottom"],
                   "default": "left",
                   "title": "Button position",
                   "inputType": {
