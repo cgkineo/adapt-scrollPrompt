@@ -3,5 +3,6 @@
   "_scrollPrompt": {
     "_isEnabled": true,
     "instruction": "{{_globals._extensions._scrollPrompt.scrollDown}}",
+    "_buttonPosition": "left",
     "_iconClass": "icon-controls-down"
   }
