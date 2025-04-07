@@ -1,4 +1,4 @@
-  // Apply to course.json, contentObject.json, blocks.json or components.json
+  // Apply to course.json, contentObjects.json, blocks.json or components.json
 
   "_scrollPrompt": {
     "_isEnabled": true,
