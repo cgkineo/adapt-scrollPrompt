@@ -17,9 +17,7 @@ export default function ScrollPromptButton (props) {
       <span
         className={classes([
           'icon',
-          _scrollPrompt._iconClass
-            ? _scrollPrompt._iconClass
-            : 'icon-controls-down'
+          _scrollPrompt._iconClass || 'icon-controls-down'
         ])}
         aria-hidden='true'
       />
