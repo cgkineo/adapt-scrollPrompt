@@ -6,7 +6,7 @@ export default function ScrollPrompt (props) {
     _scrollPrompt
   } = props;
 
-  const buttonPosition = _scrollPrompt._buttonPosition;
+  const buttonPosition = _scrollPrompt._buttonPosition || 'left';
   let buttonRenderOrder = 'first';
 
   if (buttonPosition === 'bottom' || buttonPosition === 'right') {
