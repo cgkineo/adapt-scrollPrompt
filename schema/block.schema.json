@@ -25,6 +25,19 @@
               "title": "Instruction text",
               "default": "{{_globals._extensions._scrollPrompt.scrollDown}}"
             },
+            "_buttonPosition": {
+              "type": "string",
+              "title": "Button position",
+              "description": "Set the button rendering position in relation to the instruction text.",
+              "default": "left",
+              "enum": [
+                "left",
+                "right",
+                "top",
+                "bottom"
+              ],
+              "_backboneForms": "Select"
+            },
             "_iconClass": {
               "type": "string",
               "title": "Button icon class",

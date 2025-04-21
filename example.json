@@ -1,7 +1,8 @@
-  // Apply to course.json, contentObject.json, blocks.json or components.json
-
-  "_scrollPrompt": {
-    "_isEnabled": true,
-    "instruction": "{{_globals._extensions._scrollPrompt.scrollDown}}",
-    "_iconClass": "icon-controls-down"
-  }
+// Apply to course.json, contentObjects.json, blocks.json or components.json
+"_scrollPrompt": {
+  "_isEnabled": true,
+  "instruction": "{{_globals._extensions._scrollPrompt.scrollDown}}",
+  "_comment": "Position options include left, right, top and bottom.",
+  "_buttonPosition": "left",
+  "_iconClass": "icon-controls-down"
+}

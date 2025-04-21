@@ -1,38 +1,41 @@
 import React from 'react';
-import { classes, compile } from 'core/js/reactHelpers';
+import { classes, compile, templates } from 'core/js/reactHelpers';
 
 export default function ScrollPrompt (props) {
   const {
-    _scrollPrompt,
-    onScrollPromptClick
+    _scrollPrompt
   } = props;
+
+  const buttonPosition = _scrollPrompt._buttonPosition || 'left';
+  let buttonRenderOrder = 'first';
+
+  if (buttonPosition === 'bottom' || buttonPosition === 'right') {
+    buttonRenderOrder = 'last';
+  }
 
   return (
     <div
-      className='scrollPrompt__inner a11y-ignore'
+      className={classes([
+        'scrollPrompt__inner',
+        buttonPosition && `align-button-${buttonPosition}`,
+        'a11y-ignore'
+      ])}
       aria-hidden='true'
     >
 
-      <button
-        className='btn-icon scrollPrompt__btn'
-        onClick={onScrollPromptClick}
-      >
-        <span
-          className={classes([
-            'icon',
-            _scrollPrompt._iconClass
-              ? _scrollPrompt._iconClass
-              : 'icon-controls-down'
-          ])}
-          aria-hidden='true'
-        />
-      </button>
+      {buttonRenderOrder === 'first' &&
+      <templates.scrollPromptButton {...props} />
+      }
 
       {_scrollPrompt.instruction &&
       <div
         className='scrollPrompt__instruction'
         dangerouslySetInnerHTML={{ __html: compile(_scrollPrompt.instruction, props) }}
       />
+      }
+
+      {buttonRenderOrder === 'last' &&
+      <templates.scrollPromptButton {...props} />
       }
 
     </div>

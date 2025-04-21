@@ -1,12 +1,44 @@
 .scrollPrompt {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 
   &__inner {
     display: flex;
+  }
+
+  &__inner.align-button-top,
+  &__inner.align-button-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__inner.align-button-left,
+  &__inner.align-button-right {
+    flex-direction: row;
     align-items: center;
   }
 
+  &__inner.align-button-top &__instruction {
+    margin-top: @component-instruction-margin;
+  }
+
+  &__inner.align-button-bottom &__instruction {
+    margin-bottom: @component-instruction-margin;
+  }
+
+  &__inner.align-button-left &__instruction {
+    margin-inline-start: @component-instruction-margin;
+  }
+
+  &__inner.align-button-right &__instruction {
+    margin-inline-end: @component-instruction-margin;
+  }
+}
+
+// --------------------------------------------------
+// THEME
+// --------------------------------------------------
+.scrollPrompt {
   &__instruction {
-    margin-inline-start: 1rem;
+    .instruction-text;
   }
 }
