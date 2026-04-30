@@ -2,6 +2,7 @@ import Adapt from 'core/js/adapt';
 import Router from 'core/js/router';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import logging from 'core/js/logging';
 import { templates } from 'core/js/reactHelpers';
 
 export default class ScrollPromptView extends Backbone.View {
@@ -33,16 +34,30 @@ export default class ScrollPromptView extends Backbone.View {
     this.listenTo(Adapt, 'remove', this.remove);
   }
 
-  onScrollPromptClick(e) {
-    // Set scroll to selector based on model type
+  getNextBlock() {
+    const currentBlock = this.$el.parents('.block');
+    const nextSibling = currentBlock.next('.block');
+    if (nextSibling.length) return nextSibling;
+    return currentBlock.parents('.article').next('.article').find('.block').first();
+  }
+
+  getTarget(type) {
+    switch (type) {
+      case 'course': return '.js-children';
+      case 'page': return '.article';
+      case 'block':
+      case 'component': return this.getNextBlock();
+    }
+  }
+
+  onScrollPromptClick() {
     const type = this.model.get('_type');
-    const nextEl = {
-      course: '.js-children',
-      page: '.article',
-      block: this.$el.parents('.block').next(),
-      component: this.$el.parents('.block').next()
-    };
-    Router.navigateToElement(nextEl[type], { duration: 800 });
+    const target = this.getTarget(type);
+    if (target instanceof $ && !target.length) {
+      logging.warn(`scrollPrompt: no next element found for type ${type} on ${this.model.get('_id')}`);
+      return;
+    }
+    Router.navigateToElement(target, { duration: 800 });
   }
 
 };
