@@ -47,12 +47,16 @@ export default class ScrollPromptView extends Backbone.View {
       case 'page': return '.article';
       case 'block':
       case 'component': return this.getNextBlock();
+      default:
+        logging.warn(`scrollPrompt: unknown type "${type}" on ${this.model.get('_id')}`);
+        return null;
     }
   }
 
   onScrollPromptClick() {
     const type = this.model.get('_type');
     const target = this.getTarget(type);
+    if (target == null) return;
     if (target instanceof $ && !target.length) {
       logging.warn(`scrollPrompt: no next element found for type ${type} on ${this.model.get('_id')}`);
       return;
