@@ -19,7 +19,7 @@ describe('adapt-scrollPrompt - v1.1.1 to v1.2.0', async () => {
   });
 
   checkContent('adapt-scrollPrompt - check course _globals._extensions._scrollPrompt.scrollDown', async () => {
-    const expected = scrollDownBefore ?? 'Scroll down';
+    const expected = scrollDownBefore === undefined ? 'Scroll down' : scrollDownBefore;
     if (_.get(course, '_globals._extensions._scrollPrompt.scrollDown') !== expected) throw new Error('adapt-scrollPrompt - _globals._extensions._scrollPrompt.scrollDown not backfilled/preserved correctly');
     return true;
   });
@@ -74,7 +74,7 @@ describe('adapt-scrollPrompt - v1.2.0 to v1.3.0', async () => {
   });
 
   checkContent('adapt-scrollPrompt - check _scrollPrompt._iconClass attribute', async () => {
-    const isValid = scrollPrompts.every((scrollPrompt, i) => scrollPrompt._iconClass === (iconClassesBefore[i] ?? 'icon-controls-down'));
+    const isValid = scrollPrompts.every((scrollPrompt, i) => scrollPrompt._iconClass === (iconClassesBefore[i] === undefined ? 'icon-controls-down' : iconClassesBefore[i]));
     if (!isValid) throw new Error('adapt-scrollPrompt - _iconClass not backfilled/preserved correctly on every instance of _scrollPrompt');
     if (untouchedItem?._scrollPrompt) throw new Error('adapt-scrollPrompt - _scrollPrompt should not be created on an item that did not already have it');
     return true;
@@ -135,7 +135,7 @@ describe('adapt-scrollPrompt - v1.3.0 to v1.4.0', async () => {
   });
 
   checkContent('adapt-scrollPrompt - check _scrollPrompt._buttonPosition attribute', async () => {
-    const isValid = scrollPrompts.every((scrollPrompt, i) => scrollPrompt._buttonPosition === (buttonPositionsBefore[i] ?? 'left'));
+    const isValid = scrollPrompts.every((scrollPrompt, i) => scrollPrompt._buttonPosition === (buttonPositionsBefore[i] === undefined ? 'left' : buttonPositionsBefore[i]));
     if (!isValid) throw new Error('adapt-scrollPrompt - _buttonPosition not backfilled/preserved correctly on every instance of _scrollPrompt');
     if (untouchedItem?._scrollPrompt) throw new Error('adapt-scrollPrompt - _scrollPrompt should not be created on an item that did not already have it');
     return true;
