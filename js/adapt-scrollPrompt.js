@@ -15,10 +15,13 @@ class ScrollPrompt extends Backbone.Controller {
     const scrollPrompt = model.get('_scrollPrompt');
     if (!scrollPrompt || !scrollPrompt._isEnabled) return;
 
-    let type = model.get('_type');
-    if (type === 'course') type = 'menu';
-    const suffix = ['component', 'block'].includes(type) ? '__inner' : '__header-inner';
-    const selector = `.${type}${suffix}`;
+    const selectorByType = {
+      course: '.menu__header-inner',
+      page: '.page__header-inner',
+      block: '.block__inner',
+      component: '.component__inner'
+    };
+    const selector = selectorByType[model.get('_type')];
 
     new ScrollPromptView({
       model
