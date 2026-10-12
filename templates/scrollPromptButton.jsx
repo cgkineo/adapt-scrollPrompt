@@ -8,10 +8,14 @@ export default function ScrollPromptButton (props) {
     onScrollPromptClick
   } = props;
 
+  // The prompt is hidden from screen readers (aria-hidden on its wrapper),
+  // so keep the button out of the tab order as well. Keyboard users reach
+  // the same content with Tab or the scroll keys.
   return (
 
     <button
       className='btn-icon scrollPrompt__btn'
+      tabIndex={-1}
       onClick={onScrollPromptClick}
     >
       <span

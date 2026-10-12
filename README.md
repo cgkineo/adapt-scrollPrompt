@@ -14,6 +14,6 @@ For blocks and components, the button will be placed at the end of the block / c
 ---
 
 **Author / maintainer:**  Mindtools Kineo<br>
-**Accessibility support:**  WAI AA<br>
+**Accessibility support:**  WAI AA. The prompt is intentionally a visual-only aid, hidden from assistive technology and skipped by keyboard.<br>
 **RTL support:**  Yes<br>
 **Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, Safari for macOS/iOS/iPadOS, Opera<br>
